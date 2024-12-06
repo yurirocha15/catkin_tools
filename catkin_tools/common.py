@@ -254,9 +254,8 @@ def get_recursive_build_depends_in_workspace(package, ordered_packages):
         include_function=lambda p: (
             p.build_depends +
             p.buildtool_depends +
-            p.test_depends +
             p.run_depends),
-        exclude_function=lambda p: []
+        exclude_function=lambda p: p.test_depends
     )
 
 
